@@ -20,12 +20,11 @@ function App() {
   //using context provider to pass theme inside the component tree
   const [theme, setTheme] = React.useState({theme: {}});
 
-  useEffect(() => setTheme({theme: {buttonThemes: 'blue'}}), []);
-  //'blue' pitää ehkä olla kaarisuluissa?
-
   return (
-    //passing the context to the next component
-    <ThemeContext.Provider value= {theme}>
+    //passing the context to the next component with ThemeContext.Provider
+    //here we can change the context {buttonThemes.black} or {buttonThemes.blue}
+    //value could also be dynamic
+    <ThemeContext.Provider value= {buttonThemes.black}>
        <Header />
     </ThemeContext.Provider>
    
